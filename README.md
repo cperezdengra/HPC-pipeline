@@ -1,4 +1,4 @@
-# AI Factory Pipeline Setup
+# AI Pipeline Setup
 
 This guide will walk you through setting up your AI Factory project, including creating a virtual environment, installing essential tools, and initializing DVC.
 
