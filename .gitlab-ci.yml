@@ -1,0 +1,28 @@
+stages:
+  - build
+  - test
+  - train
+  - deploy
+
+variables:
+  DOCKER_BUILDKIT: 1
+
+build:
+  stage: build
+  script:
+    - docker build -t llm-demo:latest .
+
+test:
+  stage: test
+  script:
+    - echo "Simple test: lint or unit tests could go here."
+
+train:
+  stage: train
+  script:
+    - dvc repro
+
+deploy:
+  stage: deploy
+  script:
+    - ansible-playbook -i deploy/inventory.ini deploy/deploy_model.yml

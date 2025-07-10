@@ -1,0 +1,13 @@
+---
+- hosts: cluster
+  #become: true
+  tasks:
+    - name: Create results directory
+      file:
+        path: /opt/llm-results
+        state: directory
+
+    - name: Copy model outputs
+      copy:
+        src: ../results/
+        dest: /opt/llm-results/

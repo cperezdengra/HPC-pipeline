@@ -1,0 +1,8 @@
+stages:
+  train:
+    #cmd: python train.py
+    cmd: python train_v2.py
+    deps:
+      - train_v2.py
+    outs:
+      - results/
